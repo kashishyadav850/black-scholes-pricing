@@ -1,5 +1,5 @@
-black-scholes-app/
-├── app.py                # Main Streamlit app script
-├── functions.py          # Helper functions for Black-Scholes calculation
-├── requirements.txt      # Python libraries list
-├── README.md             # Project overview
+streamlit
+numpy
+matplotlib
+scipy
+pandas
