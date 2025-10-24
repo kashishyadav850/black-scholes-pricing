@@ -34,7 +34,7 @@ volatilities = np.linspace(0.1 , 0.3 , 10)             #creates evenly spaced vo
 call_matrix = np.zeros((len(volatilities),len(spot_prices)))
 
 spot_prices_grid , volatilities_grid = np.meshgrid(spot_prices,volatilities)    #Create two 2D grids from your spot prices and volatilities arrays #    Each grid pairs every spot price with every volatility
-vectorized_bs = np.vectorize(lambda S, v:black_scholes (S,K,T,r,sigma,"call")   #Convert your black_scholes function into a "vectorized" function - meaning it can accept and operate elementwise on arrays
+vectorized_bs = np.vectorize(lambda S, v:black_scholes (S,K,T,r,sigma,"call"))   #Convert your black_scholes function into a "vectorized" function - meaning it can accept and operate elementwise on arrays
 call_matrix = vectorized_bs(spot_prices_grid,volatilities_grid)
 
 st.write("Call Option Heatmap")
@@ -48,4 +48,5 @@ ax.set_yticklabels([f"{v:.2f}" for v in volatilities])
 ax.set_xlabel("Spot Price (S)")
 ax.set_ylabel("Volatility (σ)")
 st.pyplot(fig)
+
 
